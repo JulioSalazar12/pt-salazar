@@ -1,25 +1,29 @@
 <template>
   <div class="datatableview">
-    <h1 class="my-5">FRONT END - PRUEBA TECNICA</h1>
+    <h1 class="my-8">FRONT END - PRUEBA TECNICA</h1>
 
-    <v-card>
-      <v-card-title>
-        Peliculas
-        <v-spacer></v-spacer>
-        <v-text-field
-          v-model="search"
-          append-icon="mdi-magnify"
-          label="Search"
-          single-line
-          hide-details
-        ></v-text-field>
-      </v-card-title>
-      <v-data-table
-        :headers="headers"
-        :items="filmsList"
-        :search="search"
-      ></v-data-table>
-  </v-card>
+    <v-hover>    
+      <template v-slot:default="{ hover }">
+        <v-card :class="`elevation-${hover ? 24 : 0}`" class="transition-swing mx-auto pa-5" elevation="10" width="850px">        
+          <v-card-title>
+            Peliculas
+            <v-spacer></v-spacer>
+            <v-text-field
+              v-model="search"
+              append-icon="mdi-magnify"
+              label="Search"
+              single-line
+              hide-details
+            ></v-text-field>
+          </v-card-title>
+          <v-data-table
+            :headers="headers"
+            :items="filmsList"
+            :search="search"
+          ></v-data-table>
+        </v-card>
+      </template>
+    </v-hover>
 
   </div>
 </template>
