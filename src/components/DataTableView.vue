@@ -9,12 +9,28 @@
             Peliculas
             <v-spacer></v-spacer>
             <v-text-field
+              class="mb-6"
               v-model="search"
               append-icon="mdi-magnify"
-              label="Search"
+              label="Titulo, Director, Año o Puntaje"
               single-line
               hide-details
             ></v-text-field>
+            <v-spacer></v-spacer>
+            <v-btn
+              elevation="0"
+              :loading="loading4"
+              :disabled="loading4"
+              color="indigo accent-4"
+              class="white--text font-weight-bold mr-5"
+              @click="loader = 'loading4'">
+              Reload
+              <template v-slot:loader>
+                <span class="custom-loader">
+                  <v-icon light>mdi-cached</v-icon>
+                </span>
+              </template>
+            </v-btn>
           </v-card-title>
           <v-data-table
             :headers="headers"
