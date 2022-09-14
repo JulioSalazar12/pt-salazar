@@ -1,8 +1,11 @@
 <template>
-  <v-app>    
+  <v-app>
+    <h1 class="my-5">FRONT END - PRUEBA TECNICA</h1>
+
     <v-main>
       <DataTableView/>
     </v-main>
+    <spam class="mt-5 mb-2">Desarrollado por Julio Salazar Zapata</spam>
   </v-app>
 </template>
 
